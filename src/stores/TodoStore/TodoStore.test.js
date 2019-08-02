@@ -5,5 +5,6 @@ describe("TodoStore test cases", () => {
     const todoStore = new TodoStore();
     todoStore.addTodo("learn tdd");
     expect(todoStore.todos).toHaveLength(1);
+    expect(todoStore.todos[0].description).toBe("learn tdd");
   });
 });
