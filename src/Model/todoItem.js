@@ -1,3 +1,5 @@
+import { observable, action } from "mobx";
+
 export default class TodoItem {
   id;
   description;
@@ -6,5 +8,9 @@ export default class TodoItem {
     this.id = Date.now();
     this.description = description;
     this.isCompleted = false;
+  }
+
+  @action.bound toggleCompleted() {
+    this.isCompleted = !this.isCompleted;
   }
 }
