@@ -1,4 +1,5 @@
 import TodoStore from "./index";
+import { filters } from "../../constants";
 
 let todoStore;
 beforeEach(() => {
@@ -19,7 +20,7 @@ describe("TodoStore test cases", () => {
   });
 
   it("should set the todos filter accordingly as selected by the user (setFilter)", () => {
-    todoStore.setFilter("active");
-    expect(todoStore.filter).toBe("active");
+    todoStore.setFilter(filters.active);
+    expect(todoStore.filter).toBe(filters.active);
   });
 });
