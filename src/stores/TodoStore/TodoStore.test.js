@@ -28,4 +28,17 @@ describe("TodoStore test cases", () => {
     todoStore.setFilter(filters.all);
     expect(todoStore.filter).toBe(filters.all);
   });
+
+  it("should return the filtered todos according to the filter set", () => {
+    todoStore.addTodo("item 1");
+    todoStore.addTodo("item 2");
+    todoStore.addTodo("item 3");
+    expect(todoStore.filteredList).toHaveLength(3);
+    todoStore.todos[0].isCompleted = true;
+    expect(todoStore.filteredList).toHaveLength(3);
+    todoStore.setFilter(filters.completed);
+    expect(todoStore.filteredList).toHaveLength(1);
+    todoStore.setFilter(filters.active);
+    expect(todoStore.filteredList).toHaveLength(2);
+  });
 });
