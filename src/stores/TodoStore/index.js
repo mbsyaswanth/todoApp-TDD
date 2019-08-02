@@ -1,8 +1,8 @@
-import todoItem from "../../Model/todoItem";
+import TodoItem from "../../Model/todoItem";
 class TodoStore {
   todos = [];
   addTodo = todoDescription => {
-    this.todos.push(new todoItem(todoDescription));
+    this.todos.push(new TodoItem(todoDescription));
   };
 }
 

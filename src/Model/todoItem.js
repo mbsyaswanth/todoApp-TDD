@@ -1,4 +1,4 @@
-export default class todoItem {
+export default class TodoItem {
   id;
   description;
   isCompleted;
