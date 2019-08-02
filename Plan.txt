@@ -19,10 +19,13 @@ Components
         [x] integration
             [x] add todo to Store 20mins 14:23 - 15:15
     [*] TodoList
-    [] TodoListItem 25min 15:40
-        [] todo item structure
+    [*] TodoListItem 25min 15:40
+        [x] todo item structure 16:05
+        [*] integrate todo list to render all todos - 10 mins 16:12
         [] check - uncheck
         [] delete - on delete button click
+
+    [] filters
 
 Models
     [x] TodoItem
