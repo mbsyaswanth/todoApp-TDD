@@ -29,4 +29,15 @@ describe("Todo list", () => {
     expect(item.toggleCompleted).toBeCalledTimes(1);
     expect(item.isCompleted).toBeTruthy();
   });
+
+  it("should test if delete button deletes the todo item ", () => {
+    const item = todoStore.addTodo("learn tdd");
+    jest.spyOn(todoStore, "removeTodo");
+    const { getByTestId } = render(<TodoList store={todoStore} />);
+    const result = getByTestId("delete");
+    expect(result).toBeDefined();
+    fireEvent.click(result);
+    expect(todoStore.removeTodo).toBeCalledWith(item);
+    expect(todoStore.todos).toHaveLength(0);
+  });
 });

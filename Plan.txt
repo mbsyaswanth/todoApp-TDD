@@ -18,12 +18,13 @@ Components
         [x] input element with placeholder
         [x] integration
             [x] add todo to Store 20mins 14:23 - 15:15
-    [*] TodoList
+    [x] TodoList
     [*] TodoListItem 25min 15:40
         [x] todo item structure 16:05
         [x] integrate todo list to render all todos - 10 mins 16:12 - 16:24
-        [*] check - uncheck - 15mins 16:27 -17:09
-        [] delete - on delete button click
+        [x] check - uncheck - 15mins 16:27 -17:09
+        [*] delete - on delete button click
+        [] edit todo
 
     [] filters
 
