@@ -7,7 +7,7 @@ class TodoList extends Component {
     return (
       <div>
         {todos.map(todo => {
-          return <TodoItem todo={todo} remove={removeTodo} />;
+          return <TodoItem todo={todo} key={todo.id} remove={removeTodo} />;
         })}
       </div>
     );
