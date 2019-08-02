@@ -5,7 +5,7 @@ Store
     [x] addTodo
     [x] removeTodo  15min 10:05 - 10:33
         [x] convert to mobx and refactor todo 10mins 10:41 - 10:49
-    [*] setFilter 10mins 10:58 
+    [*] setFilter 10mins 10:58 - 11:10 
     [] getFilteredList
         [] getCompleted
         [] getActive

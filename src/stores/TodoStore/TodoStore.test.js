@@ -19,8 +19,13 @@ describe("TodoStore test cases", () => {
     expect(todoStore.todos).toHaveLength(0);
   });
 
-  it("should set the todos filter accordingly as selected by the user (setFilter)", () => {
+  it("should set the todos filter accordingly as selected by the user (setFilter) and initial value should be all", () => {
+    expect(todoStore.filter).toBe(filters.all);
     todoStore.setFilter(filters.active);
     expect(todoStore.filter).toBe(filters.active);
+    todoStore.setFilter(filters.completed);
+    expect(todoStore.filter).toBe(filters.completed);
+    todoStore.setFilter(filters.all);
+    expect(todoStore.filter).toBe(filters.all);
   });
 });

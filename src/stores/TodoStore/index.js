@@ -1,8 +1,9 @@
 import TodoItem from "../../Model/todoItem";
 import { observable, action } from "mobx";
+import { filters } from "../../constants";
 class TodoStore {
   @observable todos = [];
-  @observable filter = "all";
+  @observable filter = filters.all;
   @action.bound addTodo(todoDescription) {
     this.todos.push(new TodoItem(todoDescription));
     return this.todos[this.todos.length - 1];
