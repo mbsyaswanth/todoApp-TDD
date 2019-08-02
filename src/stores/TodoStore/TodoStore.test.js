@@ -57,10 +57,4 @@ describe("TodoStore test cases", () => {
     todoStore.todos[0].editTodo("this is edited");
     expect(todoStore.todos[0].description).toBe("this is edited");
   });
-
-  it("should check whether inputbox component exists ", () => {
-    const { getByPlaceholderText } = render(<InputBox />);
-    const result = getByPlaceholderText("what needs to be done ?");
-    expect(result).toBeDefined();
-  });
 });
