@@ -4,7 +4,7 @@ class TodoItem extends Component {
   render() {
     return (
       <div>
-        <input type="checkbox" />
+        <input data-testid="checkbox" type="checkbox" />
         <span>{this.props.todo.description}</span>
         <input type="button" value="X" />
       </div>

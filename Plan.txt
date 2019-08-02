@@ -21,8 +21,8 @@ Components
     [*] TodoList
     [*] TodoListItem 25min 15:40
         [x] todo item structure 16:05
-        [*] integrate todo list to render all todos - 10 mins 16:12
-        [] check - uncheck
+        [x] integrate todo list to render all todos - 10 mins 16:12 - 16:24
+        [*] check - uncheck - 15mins 16:27
         [] delete - on delete button click
 
     [] filters
