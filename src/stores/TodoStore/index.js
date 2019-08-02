@@ -18,6 +18,22 @@ class TodoStore {
   @action.bound setFilter(filter) {
     this.filter = filter;
   }
+
+  @computed get filteredList() {
+    if (this.filter === filters.all) {
+      return this.todos;
+    }
+    if (this.filter === filters.completed) {
+      return this.todos.filter(todo => {
+        return todo.isCompleted;
+      });
+    }
+    if (this.filter === filters.active) {
+      return this.todos.filter(todo => {
+        return !todo.isCompleted;
+      });
+    }
+  }
 }
 
 export default TodoStore;
