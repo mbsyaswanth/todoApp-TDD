@@ -17,4 +17,9 @@ describe("TodoStore test cases", () => {
     todoStore.removeTodo(todo);
     expect(todoStore.todos).toHaveLength(0);
   });
+
+  it("should set the todos filter accordingly as selected by the user (setFilter)", () => {
+    todoStore.setFilter("active");
+    expect(todoStore.filter).toBe("active");
+  });
 });
