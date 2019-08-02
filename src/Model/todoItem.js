@@ -13,4 +13,8 @@ export default class TodoItem {
   @action.bound toggleCompleted() {
     this.isCompleted = !this.isCompleted;
   }
+
+  @action.bound editTodo(editedText) {
+    this.description = editedText;
+  }
 }
