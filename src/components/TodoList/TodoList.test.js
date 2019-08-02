@@ -31,13 +31,15 @@ describe("Todo list", () => {
   });
 
   it("should test if delete button deletes the todo item ", () => {
-    const item = todoStore.addTodo("learn tdd");
+    const item1 = todoStore.addTodo("learn tdd");
+    const item2 = todoStore.addTodo("this is a todo");
     jest.spyOn(todoStore, "removeTodo");
-    const { getByTestId } = render(<TodoList store={todoStore} />);
-    const result = getByTestId("delete");
+    const { getAllByTestId } = render(<TodoList store={todoStore} />);
+    const result = getAllByTestId("delete");
     expect(result).toBeDefined();
-    fireEvent.click(result);
-    expect(todoStore.removeTodo).toBeCalledWith(item);
-    expect(todoStore.todos).toHaveLength(0);
+    fireEvent.click(result[0]);
+    expect(todoStore.removeTodo).toBeCalledWith(item1);
+    expect(todoStore.todos).toHaveLength(1);
+    expect(todoStore.todos[0]).toBe(item2);
   });
 });
