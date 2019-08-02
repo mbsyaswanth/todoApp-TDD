@@ -2,8 +2,8 @@ Observables
     todos
 
 Store
-    [*] addTodo
-    [] removeTodo
+    [x] addTodo
+    [*] removeTodo  15min 10:05
     [] setFilter
     [] getFilteredList
         [] getCompleted
@@ -23,5 +23,3 @@ Models
         [] toggleCompleted
 
 
-[] setup - 10mins 15:37 
-[] addTodo - 15mins
