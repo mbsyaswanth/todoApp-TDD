@@ -6,7 +6,7 @@ Store
     [x] removeTodo  15min 10:05 - 10:33
         [x] convert to mobx and refactor todo 10mins 10:41 - 10:49
     [x] setFilter 10mins 10:58 - 11:10 
-    [*] getFilteredList 15min 11:53
+    [*] getFilteredList 15min 11:53 - 12:14
         [] getCompleted
         [] getActive
         [] getAll
@@ -21,6 +21,6 @@ Components
 Models
     [] TodoItem
         [] editTodo
-        [] toggleCompleted
+        [] toggleCompleted - 5min 12:20
 
 
