@@ -49,4 +49,10 @@ describe("TodoStore test cases", () => {
     todoStore.todos[0].toggleCompleted();
     expect(todoStore.todos[0].isCompleted).toBeFalsy();
   });
+
+  it("should test whether edit todo function is able to edit the todo", () => {
+    todoStore.addTodo("this is a todo");
+    todoStore.todos[0].editTodo("this is edited");
+    expect(todoStore.todos[0].description).toBe("this is edited");
+  });
 });

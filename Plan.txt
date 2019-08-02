@@ -20,7 +20,7 @@ Components
 
 Models
     [] TodoItem
-        [] editTodo
-        [] toggleCompleted - 5min 12:20
+        [] editTodo - 5 min 12:30
+        [] toggleCompleted - 5min 12:20 - 12:27
 
 
