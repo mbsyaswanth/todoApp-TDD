@@ -13,8 +13,8 @@ describe("TodoStore test cases", () => {
   });
 
   it("should remove the added todo from todos (removeTodo)", () => {
-    const item = todoStore.addTodo("learn tdd");
-    todoStore.removeTodo(item.id);
+    const todo = todoStore.addTodo("learn tdd");
+    todoStore.removeTodo(todo);
     expect(todoStore.todos).toHaveLength(0);
   });
 });

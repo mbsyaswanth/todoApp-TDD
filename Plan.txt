@@ -3,8 +3,9 @@ Observables
 
 Store
     [x] addTodo
-    [*] removeTodo  15min 10:05
-    [] setFilter
+    [*] removeTodo  15min 10:05 - 10:33
+        [*] convert to mobx and refactor todo 10mins 10:41
+    [] setFilter 
     [] getFilteredList
         [] getCompleted
         [] getActive
