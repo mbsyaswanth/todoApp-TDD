@@ -14,7 +14,10 @@ Store
 
 Components
     [] TodoApp
-    [*] InputBox 15mins 12:50
+    [*] InputBox 15mins 14:00 - 14:18
+        [x] input element with placeholder
+        [*] integration
+            [*] add todo to Store 20mins 14:23 
     [] TodoList
     [] TodoListItem
 
