@@ -18,8 +18,11 @@ Components
         [x] input element with placeholder
         [x] integration
             [x] add todo to Store 20mins 14:23 - 15:15
-    [] TodoList
-    [] TodoListItem 
+    [*] TodoList
+    [] TodoListItem 25min 15:40
+        [] todo item structure
+        [] check - uncheck
+        [] delete - on delete button click
 
 Models
     [x] TodoItem
