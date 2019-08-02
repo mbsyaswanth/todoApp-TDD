@@ -4,15 +4,16 @@ import { observable } from "mobx-react";
 
 class TodoItem extends Component {
   render() {
+    const { todo } = this.props;
     return (
       <div>
         <input
           data-testid="checkbox"
-          onChange={this.props.todo.toggleCompleted}
-          checked={this.props.todo.isCompleted}
+          onChange={todo.toggleCompleted}
+          checked={todo.isCompleted}
           type="checkbox"
         />
-        <span>{this.props.todo.description}</span>
+        <span>{todo.description}</span>
         <input type="button" value="X" />
       </div>
     );
