@@ -34,6 +34,12 @@ class TodoStore {
       });
     }
   }
+
+  @action.bound clearCompleted() {
+    this.todos = this.todos.filter(todo => {
+      return !todo.isCompleted;
+    });
+  }
 }
 
 export default TodoStore;
