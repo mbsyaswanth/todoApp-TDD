@@ -36,9 +36,13 @@ describe("Todo list", () => {
     const item2 = todoStore.addTodo("this is a todo");
     jest.spyOn(todoStore, "removeTodo");
     const { getAllByTestId } = render(<TodoList store={todoStore} />);
+    window.confirm = jest.fn(() => false);
     const result = getAllByTestId("delete");
     expect(result).toBeDefined();
     fireEvent.click(result[0]);
+    expect(todoStore.removeTodo).not.toBeCalledWith(item1);
+    fireEvent.click(result[0]);
+    window.confirm = jest.fn(() => true);
     expect(todoStore.removeTodo).toBeCalledWith(item1);
     expect(todoStore.todos).toHaveLength(1);
     expect(todoStore.todos[0]).toBe(item2);
