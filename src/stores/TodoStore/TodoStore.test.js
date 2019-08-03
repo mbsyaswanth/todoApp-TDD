@@ -50,12 +50,4 @@ describe("TodoStore test cases", () => {
     todoStore.clearCompleted();
     expect(todoStore.todos).toHaveLength(2);
   });
-
-  it("should test whether activeCount function  returns expected count", () => {
-    const item1 = todoStore.addTodo("item 1");
-    const item2 = todoStore.addTodo("item 2");
-    const item3 = todoStore.addTodo("item 3");
-    todoStore.todos[0].toggleCompleted();
-    expect(todoStore.activeCount).toHaveLength(2);
-  });
 });
