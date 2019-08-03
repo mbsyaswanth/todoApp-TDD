@@ -4,13 +4,13 @@ import { observer } from "mobx-react";
 
 @observer
 class TodoList extends Component {
+  id = 0;
   render() {
-    let id = 0;
     const { removeTodo, filteredList } = this.props.store;
     return (
       <div>
         {filteredList.map(todo => {
-          return <TodoItem todo={todo} key={id++} remove={removeTodo} />;
+          return <TodoItem todo={todo} key={this.id++} remove={removeTodo} />;
         })}
       </div>
     );
