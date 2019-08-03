@@ -43,7 +43,7 @@ class TodoItem extends Component {
             onKeyDown={this.changeTodo}
           />
         ) : (
-          <span onDoubleClick={this.handleDoubleClick}>{todo.description}</span>
+          <span onDoubleClick={this.handleDoubleClick}>{this.todoDesc}</span>
         )}
         <input
           data-testid="delete"

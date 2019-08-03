@@ -3,6 +3,7 @@ import { render, fireEvent, cleanup } from "@testing-library/react";
 import React from "react";
 import TodoList from "./index";
 import TodoItem from "./TodoItem";
+import TodoModel from "../../Model/todoItem";
 
 afterEach(cleanup);
 let todoStore;
@@ -60,17 +61,17 @@ describe("Todo list", () => {
     const { getByDisplayValue, getByText, getByTestId } = render(
       <TodoList store={todoStore} />
     );
+    const spy = jest.spyOn(TodoModel.prototype, "editTodo");
     let result = getByText("learn tdd");
     fireEvent.dblClick(result);
     result = getByTestId("todoinput");
     fireEvent.change(result, { target: { value: "changed todo" } });
     fireEvent.keyDown(result, { key: "Enter", code: 13, keyCode: 13 });
-    expect(getByText("changed todo")).toBeDefined();
-    fireEvent.change(result, { target: { value: "" } });
+    expect(spy).toBeCalledWith("changed todo");
+    fireEvent.dblClick(getByText("changed todo"));
+    result = getByTestId("todoinput");
+    fireEvent.change(result, { target: { value: "  " } });
     fireEvent.keyDown(result, { key: "Enter", code: 13, keyCode: 13 });
-    expect(getByText("changed todo")).toBeUndefined();
-    fireEvent.change(result, { target: { value: "   " } });
-    fireEvent.keyDown(result, { key: "Enter", code: 13, keyCode: 13 });
-    expect(getByText("changed todo")).toBeUnDefined();
+    expect(spy).not.toBeCalledWith("  ");
   });
 });
