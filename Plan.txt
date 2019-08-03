@@ -13,7 +13,7 @@ Store
 
 
 Components
-    [] TodoApp
+    [x] TodoApp
     [x] InputBox 15mins 14:00 - 14:18
         [x] input element with placeholder
         [x] integration
@@ -27,7 +27,8 @@ Components
         [x] edit todo 15 mins 9:39 
         [x] submit edited todo done -10:50
 
-    [] filters
+    [*] filters
+        [*] integrate filter to component
 
 Models
     [x] TodoItem
