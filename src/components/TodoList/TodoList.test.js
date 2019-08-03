@@ -66,5 +66,11 @@ describe("Todo list", () => {
     fireEvent.change(result, { target: { value: "changed todo" } });
     fireEvent.keyDown(result, { key: "Enter", code: 13, keyCode: 13 });
     expect(getByText("changed todo")).toBeDefined();
+    fireEvent.change(result, { target: { value: "" } });
+    fireEvent.keyDown(result, { key: "Enter", code: 13, keyCode: 13 });
+    expect(getByText("changed todo")).toBeUndefined();
+    fireEvent.change(result, { target: { value: "   " } });
+    fireEvent.keyDown(result, { key: "Enter", code: 13, keyCode: 13 });
+    expect(getByText("changed todo")).toBeUnDefined();
   });
 });
