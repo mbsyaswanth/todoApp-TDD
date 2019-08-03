@@ -19,9 +19,9 @@ class TodoFooter extends Component {
   render() {
     return (
       <div>
-        <input value="All" onClick={this.handleClick} />
-        <input value="Completed" onClick={this.handleClick} />
-        <input value="Active" onClick={this.handleClick} />
+        <input value="All" type="button" onClick={this.handleClick} />
+        <input value="Completed" type="button" onClick={this.handleClick} />
+        <input value="Active" type="button" onClick={this.handleClick} />
       </div>
     );
   }
