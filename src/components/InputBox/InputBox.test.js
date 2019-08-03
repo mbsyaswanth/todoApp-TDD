@@ -27,4 +27,17 @@ describe("InputBox component test cases ", () => {
     expect(spyfunc).toBeCalledWith("a test entry");
     expect(store.todos[0].description).toBe("a test entry");
   });
+  it("should not sumbit empty input", () => {
+    const store = new TodoStore();
+    const spyfunc = jest.spyOn(store, "addTodo");
+    const { getByPlaceholderText } = render(
+      <InputBox submit={store.addTodo} />
+    );
+    const result = getByPlaceholderText("what needs to be done ?");
+    fireEvent.change(result, { target: { value: "" } });
+    fireEvent.keyDown(result, { key: "Enter", code: 13, keyCode: 13 });
+    expect(result.value).toBe("");
+    expect(spyfunc).not.toBeCalledWith("");
+    expect(store.todos.length).toBe(0);
+  });
 });
