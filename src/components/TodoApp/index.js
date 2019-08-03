@@ -14,7 +14,11 @@ class TodoApp extends Component {
       <div>
         <InputBox submit={store.addTodo} />
         <TodoList store={store} />
-        <TodoFooter setFilter={store.setFilter} />
+        <TodoFooter
+          setFilter={store.setFilter}
+          count={store.activeCount}
+          clearCompleted={store.clearCompleted}
+        />
       </div>
     );
   }

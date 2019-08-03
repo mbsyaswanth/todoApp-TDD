@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { filters } from "../../constants";
+import { observer } from "mobx-react";
 
+@observer
 class TodoFooter extends Component {
   handleClick = event => {
     if (event.target.value === "All") {
