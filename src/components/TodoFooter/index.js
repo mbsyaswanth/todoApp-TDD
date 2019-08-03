@@ -19,9 +19,15 @@ class TodoFooter extends Component {
   render() {
     return (
       <div>
+        <span data-testid="todocount">{this.props.count + " items left"} </span>
         <input value="All" type="button" onClick={this.handleClick} />
         <input value="Completed" type="button" onClick={this.handleClick} />
         <input value="Active" type="button" onClick={this.handleClick} />
+        <input
+          value="Clear Completed"
+          type="button"
+          onClick={this.props.clearCompleted}
+        />
       </div>
     );
   }
