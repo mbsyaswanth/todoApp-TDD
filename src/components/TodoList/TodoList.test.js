@@ -42,4 +42,14 @@ describe("Todo list", () => {
     expect(todoStore.todos).toHaveLength(1);
     expect(todoStore.todos[0]).toBe(item2);
   });
+
+  it("should be able to edit todo text on dbclick", () => {
+    const item1 = todoStore.addTodo("learn tdd");
+    const { getByText, getByTestId } = render(<TodoList store={todoStore} />);
+    let result = getByText("learn tdd");
+    fireEvent.dblClick(result);
+    result = getByTestId(todoinput);
+    fireEvent.change(result, { target: { value: "changed todo" } });
+    expect(getByText("changed todo")).toBeDefined();
+  });
 });

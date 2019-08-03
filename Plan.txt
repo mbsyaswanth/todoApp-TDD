@@ -24,7 +24,7 @@ Components
         [x] integrate todo list to render all todos - 10 mins 16:12 - 16:24
         [x] check - uncheck - 15mins 16:27 -17:09
         [x] delete - on delete button click
-        [*] edit todo 
+        [*] edit todo 15 mins 9:39
 
     [] filters
 
