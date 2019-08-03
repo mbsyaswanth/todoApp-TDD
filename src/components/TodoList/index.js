@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import TodoItem from "./TodoItem";
+import { observer } from "mobx-react";
 
+@observer
 class TodoList extends Component {
   render() {
     const { todos, removeTodo } = this.props.store;

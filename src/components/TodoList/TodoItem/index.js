@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { observer, action } from "mobx";
-import { observable } from "mobx-react";
+import { observable, action } from "mobx";
+import { observer } from "mobx-react";
 
+@observer
 class TodoItem extends Component {
   handleRemove = () => {
     this.props.remove(this.props.todo);

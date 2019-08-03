@@ -23,8 +23,8 @@ Components
         [x] todo item structure 16:05
         [x] integrate todo list to render all todos - 10 mins 16:12 - 16:24
         [x] check - uncheck - 15mins 16:27 -17:09
-        [*] delete - on delete button click
-        [] edit todo
+        [x] delete - on delete button click
+        [*] edit todo 
 
     [] filters
 
