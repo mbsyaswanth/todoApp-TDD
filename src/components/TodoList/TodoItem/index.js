@@ -4,9 +4,19 @@ import { observer } from "mobx-react";
 
 @observer
 class TodoItem extends Component {
+  @observable todoDesc = "";
+  @observable isClicked = false;
   handleRemove = () => {
     this.props.remove(this.props.todo);
   };
+
+  @action.bound handleDoubleClick(event) {
+    this.isClicked = true;
+  }
+
+  @action.bound handleInputChange(event) {
+    this.todoDesc = event.target.value;
+  }
 
   render() {
     const { todo } = this.props;
@@ -18,7 +28,15 @@ class TodoItem extends Component {
           checked={todo.isCompleted}
           type="checkbox"
         />
-        <span>{todo.description}</span>
+        {this.isClicked ? (
+          <input
+            data-testid="todoinput"
+            value={this.todoDesc}
+            onChange={this.handleInputChange}
+          />
+        ) : (
+          <span onDoubleClick={this.handleDoubleClick}>{todo.description}</span>
+        )}
         <input
           data-testid="delete"
           onClick={this.handleRemove}

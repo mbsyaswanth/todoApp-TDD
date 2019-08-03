@@ -45,11 +45,13 @@ describe("Todo list", () => {
 
   it("should be able to edit todo text on dbclick", () => {
     const item1 = todoStore.addTodo("learn tdd");
-    const { getByText, getByTestId } = render(<TodoList store={todoStore} />);
+    const { getByDisplayValue, getByText, getByTestId } = render(
+      <TodoList store={todoStore} />
+    );
     let result = getByText("learn tdd");
     fireEvent.dblClick(result);
-    result = getByTestId(todoinput);
+    result = getByTestId("todoinput");
     fireEvent.change(result, { target: { value: "changed todo" } });
-    expect(getByText("changed todo")).toBeDefined();
+    expect(getByDisplayValue("changed todo")).toBeDefined();
   });
 });
