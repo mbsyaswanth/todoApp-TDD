@@ -41,8 +41,8 @@ describe("Todo list", () => {
     expect(result).toBeDefined();
     fireEvent.click(result[0]);
     expect(todoStore.removeTodo).not.toBeCalledWith(item1);
-    fireEvent.click(result[0]);
     window.confirm = jest.fn(() => true);
+    fireEvent.click(result[0]);
     expect(todoStore.removeTodo).toBeCalledWith(item1);
     expect(todoStore.todos).toHaveLength(1);
     expect(todoStore.todos[0]).toBe(item2);
