@@ -40,6 +40,12 @@ class TodoStore {
       return !todo.isCompleted;
     });
   }
+
+  @computed get activeCount() {
+    return this.todos.filter(todo => {
+      return !todo.isCompleted;
+    }).length;
+  }
 }
 
 export default TodoStore;
