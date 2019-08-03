@@ -54,4 +54,17 @@ describe("Todo list", () => {
     fireEvent.change(result, { target: { value: "changed todo" } });
     expect(getByDisplayValue("changed todo")).toBeDefined();
   });
+
+  it("should update the todo in todo list and show it like span element on enter key press", () => {
+    const item1 = todoStore.addTodo("learn tdd");
+    const { getByDisplayValue, getByText, getByTestId } = render(
+      <TodoList store={todoStore} />
+    );
+    let result = getByText("learn tdd");
+    fireEvent.dblClick(result);
+    result = getByTestId("todoinput");
+    fireEvent.change(result, { target: { value: "changed todo" } });
+    fireEvent.keyDown(result, { key: "Enter", code: 13, keyCode: 13 });
+    expect(getByText("changed todo")).toBeDefined();
+  });
 });
