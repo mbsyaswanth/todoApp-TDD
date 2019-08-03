@@ -6,10 +6,13 @@ class InputBox extends Component {
   };
   onSubmit = event => {
     if (event.keyCode === 13 && event.target.value !== "") {
-      this.props.submit(this.state.value);
-      this.setState({
-        value: ""
-      });
+      const data = event.target.value.trim();
+      if (data !== "") {
+        this.props.submit(this.state.value);
+        this.setState({
+          value: ""
+        });
+      }
     }
   };
 

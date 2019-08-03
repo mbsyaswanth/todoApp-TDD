@@ -20,8 +20,11 @@ class TodoItem extends Component {
 
   changeTodo = event => {
     if (event.keyCode === 13) {
-      this.isClicked = false;
-      this.props.todo.editTodo(this.todoDesc);
+      const data = event.target.value.trim();
+      if (data !== "") {
+        this.isClicked = false;
+        this.props.todo.editTodo(this.todoDesc);
+      }
     }
   };
 
