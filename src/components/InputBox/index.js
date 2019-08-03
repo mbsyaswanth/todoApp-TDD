@@ -5,7 +5,7 @@ class InputBox extends Component {
     value: ""
   };
   onSubmit = event => {
-    if (event.keyCode === 13) {
+    if (event.keyCode === 13 && event.target.value !== "") {
       this.props.submit(this.state.value);
       this.setState({
         value: ""
