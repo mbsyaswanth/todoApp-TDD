@@ -5,11 +5,12 @@ import { observer } from "mobx-react";
 @observer
 class TodoList extends Component {
   render() {
+    let id = 0;
     const { removeTodo, filteredList } = this.props.store;
     return (
       <div>
         {filteredList.map(todo => {
-          return <TodoItem todo={todo} key={todo.id} remove={removeTodo} />;
+          return <TodoItem todo={todo} key={id++} remove={removeTodo} />;
         })}
       </div>
     );
