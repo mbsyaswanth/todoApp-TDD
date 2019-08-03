@@ -7,7 +7,7 @@ class TodoItem extends Component {
   @observable todoDesc = this.props.todo.description;
   @observable isClicked = false;
   handleRemove = () => {
-    this.props.remove(this.props.todo);
+    if (window.confirm()) this.props.remove(this.props.todo);
   };
 
   @action.bound handleDoubleClick(event) {
