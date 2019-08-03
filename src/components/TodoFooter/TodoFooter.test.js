@@ -2,6 +2,7 @@ import TodoStore from "../../stores/TodoStore";
 import { filters } from "../../constants";
 import { render, fireEvent, cleanup } from "@testing-library/react";
 import React from "react";
+import TodoFooter from "./index";
 
 afterEach(cleanup);
 let todoStore;
