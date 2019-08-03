@@ -4,7 +4,7 @@ import { observer } from "mobx-react";
 
 @observer
 class TodoItem extends Component {
-  @observable todoDesc = "";
+  @observable todoDesc = this.props.todo.description;
   @observable isClicked = false;
   handleRemove = () => {
     this.props.remove(this.props.todo);
