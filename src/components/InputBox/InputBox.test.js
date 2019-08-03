@@ -23,6 +23,7 @@ describe("InputBox component test cases ", () => {
     const result = getByPlaceholderText("what needs to be done ?");
     fireEvent.change(result, { target: { value: "a test entry" } });
     fireEvent.keyDown(result, { key: "Enter", code: 13, keyCode: 13 });
+    expect(result.value).toBe("");
     expect(spyfunc).toBeCalledWith("a test entry");
     expect(store.todos[0].description).toBe("a test entry");
   });
