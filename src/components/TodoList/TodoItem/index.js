@@ -18,6 +18,13 @@ class TodoItem extends Component {
     this.todoDesc = event.target.value;
   }
 
+  changeTodo = event => {
+    if (event.keyCode === 13) {
+      this.isClicked = false;
+      this.props.todo.editTodo(this.todoDesc);
+    }
+  };
+
   render() {
     const { todo } = this.props;
     return (
@@ -33,6 +40,7 @@ class TodoItem extends Component {
             data-testid="todoinput"
             value={this.todoDesc}
             onChange={this.handleInputChange}
+            onKeyDown={this.changeTodo}
           />
         ) : (
           <span onDoubleClick={this.handleDoubleClick}>{todo.description}</span>
