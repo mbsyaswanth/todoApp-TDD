@@ -26,4 +26,15 @@ describe("Todo footer", () => {
     fireEvent.click(result);
     expect(todoStore.setFilter).toBeCalledWith(filters.active);
   });
+
+  it("should test integration of clear todo and active count", () => {
+    jest.spyOn(todoStore, "clearCompleted");
+    const { getByDisplayValue, getByTestId } = render(
+      <TodoFooter setFilter={todoStore.setFilter} />
+    );
+    expect(getByTestId("todocount")).toBeDefined();
+    const result = getByDisplayValue("Clear Completed");
+    fireEvent.click(result);
+    expect(todoStore.clearCompleted).toBeCalled();
+  });
 });
